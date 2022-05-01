@@ -5,7 +5,8 @@ import numpy as np
 from keras.preprocessing import image
 
 def predict(img_path):
-     labels={0: 'cardboard', 1: 'glass', 2: 'metal', 3: 'paper', 4: 'plastic', 5: 'trash'}
+     print(img_path)
+     labels={0: 'cardboards', 1: 'glass', 2: 'metal', 3: 'paper', 4: 'plastic', 5: 'trash'}
 #img_path = 'C:\\Users\\--\\Downloads\\dataset-original\\dataset-original\\metal\\'
 
      img = image.load_img(img_path, target_size=(300, 300))
@@ -13,13 +14,14 @@ def predict(img_path):
      img=np.array(img)/255.0
 #plt.imshow(img.squeeze())
      
-     model = tf.keras.models.load_model("trained_model.h5")
+     model = tf.keras.models.load_model("weights50.h5")
      p=model.predict(img[np.newaxis, ...])
      pro=np.max(p[0], axis=-1)
      print("p.shape:",p.shape)
      print("prob",pro)
      predicted_class = labels[np.argmax(p[0], axis=-1)]
-     os.remove(img_path)
+     # comment the below line to stop deletinf the image 
+     #os.remove(img_path)
      print("classified label:",predicted_class)
      return(str(predicted_class)+" \n Probability:"+str(pro))
 #print(predict(img_path = 'C:\\Users\\--\\Downloads\\dataset-original\\dataset-original\\metal\\metal1.jpg'))
