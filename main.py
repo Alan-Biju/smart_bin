@@ -1,5 +1,7 @@
 from prediction import *
 from cam import *
+from servo import *
+
 #here path of the image is given and passed to the predction function
 trashPic=capturePic()
 if trashPic:
