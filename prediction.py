@@ -23,5 +23,5 @@ def predict(img_path):
      #os.remove(img_path)
      #----------------------------------------------------------->>>>>>>>>>>>>>>>>>>
      print("classified label:",predicted_class)
-     return(str(predicted_class)+" \n Probability:"+str(pro))
+     return(str(predicted_class) + " "+str(pro))
 #print(predict(img_path = 'C:\\Users\\--\\Downloads\\dataset-original\\dataset-original\\metal\\metal1.jpg'))
