@@ -4,8 +4,9 @@ from servo import *
 
 #here path of the image is given and passed to the predction function
 trashPic=capturePic()
+# trashPic=True
 if trashPic:
-    result=predict("./data/glass501.jpg")
+    result=predict("./data/paper2.jpg")
     Predication_result=result.split(" ")
     label=Predication_result[0]
     label_prob=int(float(Predication_result[1])*100)
