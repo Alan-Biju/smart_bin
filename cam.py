@@ -5,7 +5,7 @@ def capturePic():
     result, image = cam.read()
     if result:  
         imshow("Alan Biju", image)  
-        result=imwrite("./data/trashPic.png", image)
+        result=imwrite("./data/trashPic.jpg", image)
         # delay is to show the pic in the screen for refernce purpose remove it maga when added to rasPI os
         waitKey(delay=1500)
         #in mili Seconds
