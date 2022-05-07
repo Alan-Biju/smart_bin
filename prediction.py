@@ -13,7 +13,7 @@ def predict(img_path):
      img=np.array(img)/255.0
 #plt.imshow(img.squeeze())
      
-     model = tf.keras.models.load_model("./weights/weights_500.h5")
+     model = tf.keras.models.load_model("./weights/weights_1500.h5")
      p=model.predict(img[np.newaxis, ...])
      pro=np.max(p[0], axis=-1)
      print("p.shape:",p.shape)
