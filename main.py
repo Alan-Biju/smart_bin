@@ -11,10 +11,10 @@ if trashPic:
     label=Predication_result[0]
     label_prob=int(float(Predication_result[1])*100)
     print(label_prob)
-    if label in ['cardboard','paper'] and label_prob > 80:
+    if label in ['cardboard','paper'] and label_prob > 60:
         category = "Biodegradable"
         print(category)
-    elif label in ['metal','glass','plastic','trash'] and label_prob > 80:
+    elif label in ['metal','glass','plastic','trash'] and label_prob > 60:
         category = "Non-Biodegradable"
         print(category)
         if label in ['glass']:
