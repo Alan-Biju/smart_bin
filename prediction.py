@@ -5,7 +5,7 @@ from keras.preprocessing import image
 
 def predict(img_path):
      print(img_path)
-     labels={0: 'cardboards', 1: 'glass', 2: 'metal', 3: 'paper', 4: 'plastic', 5: 'trash'}
+     labels={0: 'cardboard', 1: 'glass', 2: 'metal', 3: 'paper', 4: 'plastic', 5: 'trash'}
 
 
      img = image.load_img(img_path, target_size=(300, 300))
