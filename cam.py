@@ -1,15 +1,15 @@
-from cv2 import *
+import cv2
 def capturePic():
     cam_port = 0
-    cam = VideoCapture(cam_port)
+    cam = cv2.VideoCapture(cam_port)
     result, image = cam.read()
     if result:  
-        imshow("Alan Biju", image)  
-        result=imwrite("./data/trashPic.jpg", image)
+        cv2.imshow("Alan Biju", image)  
+        result=cv2.imwrite("./data/trashPic.jpg", image)
         # delay is to show the pic in the screen for refernce purpose remove it maga when added to rasPI os
-        waitKey(delay=1500)
+        cv2.waitKey(delay=1500)
         #in mili Seconds
-        destroyWindow("Alan Biju")
+        cv2.destroyWindow("Alan Biju")
         return True
     else:
         print("No image detected. Please! try again")
