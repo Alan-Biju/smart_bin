@@ -14,9 +14,11 @@ if trashPic:
     if label in ['cardboard','paper'] and label_prob > 60:
         category = "Biodegradable"
         print(category)
+        servoMotor(12.5)
     elif label in ['metal','glass','plastic','trash'] and label_prob > 60:
         category = "Non-Biodegradable"
         print(category)
+        servoMotor(0.5)
         if label in ['glass']:
             sub_category="Non-Recyclable"
             print(sub_category)
