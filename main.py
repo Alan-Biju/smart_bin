@@ -25,5 +25,6 @@ if trashPic:
     else:
         category = "Categorizing Difficult"
         print(category) 
+        # servoMotor(0.5)
 else:
     print("somthing went worng")    
