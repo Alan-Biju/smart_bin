@@ -1,6 +1,7 @@
 from prediction import *
 from cam import *
 from servo import *
+from mongoDB import *
 
 #here path of the image is given and passed to the predction function
 trashPic=capturePic()
@@ -14,17 +15,27 @@ if trashPic:
     if label in ['cardboard','paper'] and label_prob > 60:
         category = "Biodegradable"
         print(category)
+        addTrash(category,label,"None",label_prob)
         # servoMotor(12.5)
     elif label in ['metal','glass','plastic','trash'] and label_prob > 60:
         category = "Non-Biodegradable"
         print(category)
-        # servoMotor(0.5)
-        if label in ['glass']:
+        if label in ['glass','trash']:
             sub_category="Non-Recyclable"
             print(sub_category)
+            # servoMotor(0.5)
+            addTrash(category,label,sub_category,label_prob)
+        else:
+            sub_category="Recyclable"
+            print(sub_category)
+            # servoMotor(0.5)
+            addTrash(category,label,sub_category,label_prob)
+
     else:
         category = "Categorizing Difficult"
         print(category) 
         # servoMotor(0.5)
+        addTrash(category,label,"None",label_prob)
+
 else:
     print("somthing went worng")    
