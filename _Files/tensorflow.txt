@@ -15,3 +15,5 @@ $ sudo pip3 uninstall tensorflow
 $ sudo -H pip3 install tensorflow-2.8.0-cp39-none-linux_aarch64.whl
 
 【Required】 Restart the terminal.
+
+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
