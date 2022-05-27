@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 import datetime
 from fireStore import *
+
 client = MongoClient("mongodb+srv://Alan:asdfghjkl238@cluster0.asu1c.mongodb.net/?retryWrites=true&w=majority")
 
 
