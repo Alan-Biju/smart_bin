@@ -38,4 +38,5 @@ if trashPic:
         addTrash(category,label,"None",label_prob)
 
 else:
-    print("somthing went worng")    
+    print("somthing went worng")   
+    print('testing') 
