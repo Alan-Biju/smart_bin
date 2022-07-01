@@ -39,4 +39,4 @@ if trashPic:
 
 else:
     print("somthing went worng")   
-    print('testing') 
+    
