@@ -1,19 +1,30 @@
-'''
-from gpiozero import AngularServo
-from time import sleep
-import RPi.GPIO as GPIO
-servo = AngularServo(17, min_pulse_width=0.0006, max_pulse_width=0.0023)
+'''import time 
 
-def servoMotor(angle):
-    servo.angle = 90
-    sleep(2)
-    servo.angle=-90
-    sleep(2)
-    servo.angle=0
+import RPi.GPIO as GPIO 
 
-    GPIO.cleanup()
-   
+ 
+OUT_PIN = 11
+PULSE_FREQ = 50
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(OUT_PIN, GPIO.OUT) 
+
+def servoMotor(angle=0.5):
+    print("Starting")
+    servo2 = GPIO.PWM(OUT_PIN, PULSE_FREQ) 
+
+    servo2.start(0) 
+
+    print("Spinning")
     
-'''
-    
-    
+       
+    # Jump between the opposite positions.
+    servo2.ChangeDutyCycle(2)
+    time.sleep(1)
+    servo2.ChangeDutyCycle(12)
+    time.sleep(1)
+    servo2.ChangeDutyCycle(2)
+    time.sleep(1)
+    servo2.ChangeDutyCycle(12)
+    time.sleep(4)
+    GPIO.cleanup()'''
